@@ -1,9 +1,15 @@
+import 'package:demoeticaret/SideMenu.dart';
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,22 +49,23 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
+  int tabCount = 0;
+TabController tblController;
+  @override
+  void initState() {
+    super.initState();
+    tblController = TabController(vsync: this, length: 3);
   }
-
   @override
   Widget build(BuildContext context) {
+    //Dikey Görünüme sabitlemek için
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -66,46 +73,204 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.blueAccent,
+        items: <Widget>[
+          Icon(Icons.add_shopping_cart, size: 30),
+          Icon(Icons.search, size: 50),
+          Icon(Icons.library_books, size: 30),
+        ],
+      ),
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      drawer: SideMenu(),
+      body: Column(
+        children: <Widget>[
+          //Ana sayfa slaytı
+          Container(
+            decoration: BoxDecoration(
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    color: Colors.black45,
+                    blurRadius: 15.0,
+                    offset: Offset(0.0, 3))
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 200,
+              child: Carousel(
+                autoplay: true,
+                autoplayDuration: Duration(seconds: 5),
+                showIndicator: false,
+                borderRadius: false,
+                images: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: new AssetImage("assets/imgmedic1.jpg"),
+                            fit: BoxFit.fitWidth)),
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.only(top: 80),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Text(
+                        "İçerik Yazısı Buraya Gelecek",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.blue,
+                        ),
+                        maxLines: 1,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: new AssetImage("assets/imgmedic1.jpg"),
+                            fit: BoxFit.fitWidth)),
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.only(top: 80),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Text(
+                        "İçerik Yazısı Buraya Gelecek",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.blue,
+                        ),
+                        maxLines: 1,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: new AssetImage("assets/imgmedic1.jpg"),
+                            fit: BoxFit.fitWidth)),
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.only(top: 80),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Text(
+                        "İçerik Yazısı Buraya Gelecek",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.blue,
+                        ),
+                        maxLines: 1,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
+          ),
+
+          //3 Tab Ürün Grupları
+
+         Container(
+           margin: EdgeInsets.only(top:20),
+           width: MediaQuery.of(context).size.width,
+           child:TabBar(
+
+             //isScrollable: true,
+             controller: tblController,
+             onTap: (index){
+               var content = "";
+               switch (index) {
+                 case 0:
+                   break;
+                 case 1:
+                   break;
+                 case 2:
+                   break;
+                 default:
+                   break;
+               }
+             },
+             tabs: <Widget>[
+
+               Tab(
+
+                 child: Container(
+
+                   alignment: Alignment.center,
+                   constraints: BoxConstraints.expand(
+                       width: MediaQuery.of(context).size.width / 3),
+                   padding: EdgeInsets.only(bottom: 1),
+
+                     child: Container(
+
+                       child: Column(
+                         children: <Widget>[
+                           Icon(Icons.flash_on,color: Colors.black87,),
+                           Text("Son Eklenenler",style: TextStyle(color: Colors.black87),),
+                         ],
+                       ),
+                   ),
+                 ),
+               ),
+               Tab(
+                 child: Container(
+                   alignment: Alignment.center,
+                   constraints: BoxConstraints.expand(
+                       width: MediaQuery.of(context).size.width / 3),
+                 child: Column(
+                       children: <Widget>[
+                         Icon(Icons.local_offer,color: Colors.black87,),
+                         Text("İndirimdekiler",style: TextStyle(color: Colors.black87),),
+                       ],
+                     ),
+                 ),
+               ),
+               Tab(
+                 child: Container(
+
+                   alignment: Alignment.center,
+                   constraints: BoxConstraints.expand(
+                       width: MediaQuery.of(context).size.width / 3),
+                   child: Column(
+                       children: <Widget>[
+                         Icon(Icons.favorite,color: Colors.black87,),
+                         Text("Çok Satılanlar",style: TextStyle(color: Colors.black87),),
+                       ],
+                   ),
+                 ),
+               ),
+             ],
+           ),
+         ),
+          Container(
+            child:
+              Carousel(
+                images: [
+
+                ],
+              ),
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
