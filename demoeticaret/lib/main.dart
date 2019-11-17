@@ -1,3 +1,5 @@
+import 'dart:ui' as prefix0;
+
 import 'package:demoeticaret/SideMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -52,12 +54,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   int tabCount = 0;
-TabController tblController;
+  TabController tblController;
+
   @override
   void initState() {
     super.initState();
     tblController = TabController(vsync: this, length: 3);
   }
+
   @override
   Widget build(BuildContext context) {
     //Dikey Görünüme sabitlemek için
@@ -187,85 +191,306 @@ TabController tblController;
 
           //3 Tab Ürün Grupları
 
-         Container(
-           margin: EdgeInsets.only(top:20),
-           width: MediaQuery.of(context).size.width,
-           child:TabBar(
-
-             //isScrollable: true,
-             controller: tblController,
-             onTap: (index){
-               var content = "";
-               switch (index) {
-                 case 0:
-                   break;
-                 case 1:
-                   break;
-                 case 2:
-                   break;
-                 default:
-                   break;
-               }
-             },
-             tabs: <Widget>[
-
-               Tab(
-
-                 child: Container(
-
-                   alignment: Alignment.center,
-                   constraints: BoxConstraints.expand(
-                       width: MediaQuery.of(context).size.width / 3),
-                   padding: EdgeInsets.only(bottom: 1),
-
-                     child: Container(
-
-                       child: Column(
-                         children: <Widget>[
-                           Icon(Icons.flash_on,color: Colors.black87,),
-                           Text("Son Eklenenler",style: TextStyle(color: Colors.black87),),
-                         ],
-                       ),
-                   ),
-                 ),
-               ),
-               Tab(
-                 child: Container(
-                   alignment: Alignment.center,
-                   constraints: BoxConstraints.expand(
-                       width: MediaQuery.of(context).size.width / 3),
-                 child: Column(
-                       children: <Widget>[
-                         Icon(Icons.local_offer,color: Colors.black87,),
-                         Text("İndirimdekiler",style: TextStyle(color: Colors.black87),),
-                       ],
-                     ),
-                 ),
-               ),
-               Tab(
-                 child: Container(
-
-                   alignment: Alignment.center,
-                   constraints: BoxConstraints.expand(
-                       width: MediaQuery.of(context).size.width / 3),
-                   child: Column(
-                       children: <Widget>[
-                         Icon(Icons.favorite,color: Colors.black87,),
-                         Text("Çok Satılanlar",style: TextStyle(color: Colors.black87),),
-                       ],
-                   ),
-                 ),
-               ),
-             ],
-           ),
-         ),
           Container(
-            child:
-              Carousel(
-                images: [
+            margin: EdgeInsets.only(top: 20),
+            width: MediaQuery.of(context).size.width,
+            child: TabBar(
+              //isScrollable: true,
+              controller: tblController,
+              onTap: (index) {
+                var content = "";
+                switch (index) {
+                  case 0:
+                    break;
+                  case 1:
+                    break;
+                  case 2:
+                    break;
+                  default:
+                    break;
+                }
+              },
+              tabs: <Widget>[
+                Tab(
+                  child: Container(
+                    alignment: Alignment.center,
+                    constraints: BoxConstraints.expand(
+                        width: MediaQuery.of(context).size.width / 3),
+                    padding: EdgeInsets.only(bottom: 1),
+                    child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          Icon(
+                            Icons.flash_on,
+                            color: Colors.black87,
+                          ),
+                          Text(
+                            "Son Eklenenler",
+                            style: TextStyle(color: Colors.black87),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: Container(
+                    alignment: Alignment.center,
+                    constraints: BoxConstraints.expand(
+                        width: MediaQuery.of(context).size.width / 3),
+                    child: Column(
+                      children: <Widget>[
+                        Icon(
+                          Icons.local_offer,
+                          color: Colors.black87,
+                        ),
+                        Text(
+                          "İndirimdekiler",
+                          style: TextStyle(color: Colors.black87),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: Container(
+                    alignment: Alignment.center,
+                    constraints: BoxConstraints.expand(
+                        width: MediaQuery.of(context).size.width / 3),
+                    child: Column(
+                      children: <Widget>[
+                        Icon(
+                          Icons.favorite,
+                          color: Colors.black87,
+                        ),
+                        Text(
+                          "Çok Satılanlar",
+                          style: TextStyle(color: Colors.black87),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width:500,
+            height: 100,
+            child: ListView(
+           scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Container(
 
-                ],
-              ),
+                  decoration: BoxDecoration(
+
+                    image: DecorationImage(
+                        image: AssetImage("assets/imgmedic3.jpg"),
+                        fit: BoxFit.fitWidth
+                    ),
+
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 10.0,
+                          offset: Offset(0.6, 0.8))
+                    ],
+                  ),
+                  margin: EdgeInsets.only(left: 5,right: 5,top: 10),
+                  width:150,
+                  height:100,
+                  child: Column(
+                    children: <Widget>[
+
+                      Container(
+                        padding: EdgeInsets.all(2),
+                        alignment:Alignment(-1,-1),
+                        child: Icon(Icons.star,color: Colors.yellow[700],),
+                      ),
+                      Spacer(),
+                      Container(
+                        height: 30,
+                        padding: EdgeInsets.only(left: 3,right: 5),
+                        decoration: BoxDecoration(
+                            color:Colors.lightBlue[700].withOpacity(0.5)
+
+
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: Text("Ürün Adı",style:TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
+                            ),
+                            Spacer(),
+                            Container(
+                              child: Text("150 TL",style:TextStyle(color: Colors.white)),
+                            ),
+
+                          ],
+                        ),
+
+                      ),
+                    ],
+                  ),),
+                Container(
+
+                  decoration: BoxDecoration(
+
+                    image: DecorationImage(
+                        image: AssetImage("assets/imgmedic3.jpg"),
+                        fit: BoxFit.fitWidth
+                    ),
+
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 10.0,
+                          offset: Offset(0.6, 0.8))
+                    ],
+                  ),
+                  margin: EdgeInsets.only(left: 5,right: 5,top: 10),
+                  width:150,
+                  height:100,
+                  child: Column(
+                    children: <Widget>[
+
+                      Container(
+                        padding: EdgeInsets.all(2),
+                        alignment:Alignment(-1,-1),
+                        child: Icon(Icons.star,color: Colors.yellow[700],),
+                      ),
+                      Spacer(),
+                      Container(
+                        height: 30,
+                        padding: EdgeInsets.only(left: 3,right: 5),
+                        decoration: BoxDecoration(
+                            color:Colors.lightBlue[700].withOpacity(0.5)
+
+
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: Text("Ürün Adı",style:TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
+                            ),
+                            Spacer(),
+                            Container(
+                              child: Text("150 TL",style:TextStyle(color: Colors.white)),
+                            ),
+
+                          ],
+                        ),
+
+                      ),
+                    ],
+                  ),),
+                Container(
+
+                  decoration: BoxDecoration(
+
+                    image: DecorationImage(
+                        image: AssetImage("assets/imgmedic3.jpg"),
+                        fit: BoxFit.fitWidth
+                    ),
+
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 10.0,
+                          offset: Offset(0.6, 0.8))
+                    ],
+                  ),
+                  margin: EdgeInsets.only(left: 5,right: 5,top: 10),
+                  width:150,
+                  height:100,
+                  child: Column(
+                    children: <Widget>[
+
+                      Container(
+                        padding: EdgeInsets.all(2),
+                        alignment:Alignment(-1,-1),
+                        child: Icon(Icons.star,color: Colors.yellow[700],),
+                      ),
+                      Spacer(),
+                      Container(
+                        height: 30,
+                        padding: EdgeInsets.only(left: 3,right: 5),
+                        decoration: BoxDecoration(
+                            color:Colors.lightBlue[700].withOpacity(0.5)
+
+
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: Text("Ürün Adı",style:TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
+                            ),
+                            Spacer(),
+                            Container(
+                              child: Text("150 TL",style:TextStyle(color: Colors.white)),
+                            ),
+
+                          ],
+                        ),
+
+                      ),
+                    ],
+                  ),),
+                Container(
+
+                  decoration: BoxDecoration(
+
+                    image: DecorationImage(
+                        image: AssetImage("assets/imgmedic3.jpg"),
+                        fit: BoxFit.fitWidth
+                    ),
+
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 10.0,
+                          offset: Offset(0.6, 0.8))
+                    ],
+                  ),
+                  margin: EdgeInsets.only(left: 5,right: 5,top: 10),
+                  width:150,
+                  height:100,
+                  child: Column(
+                    children: <Widget>[
+
+                      Container(
+                        padding: EdgeInsets.all(2),
+                        alignment:Alignment(-1,-1),
+                        child: Icon(Icons.star,color: Colors.yellow[700],),
+                      ),
+                      Spacer(),
+                      Container(
+                        height: 30,
+                        padding: EdgeInsets.only(left: 3,right: 5),
+                        decoration: BoxDecoration(
+                            color:Colors.lightBlue[700].withOpacity(0.5)
+
+
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: Text("Ürün Adı",style:TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
+                            ),
+                            Spacer(),
+                            Container(
+                              child: Text("150 TL",style:TextStyle(color: Colors.white)),
+                            ),
+
+                          ],
+                        ),
+
+                      ),
+                    ],
+                  ),),
+              ],
+
+            ),
           ),
         ],
       ),
