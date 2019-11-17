@@ -1,5 +1,6 @@
 import 'dart:ui' as prefix0;
-
+import 'package:demoeticaret/News.dart';
+import 'package:demoeticaret/mainWidgers/HomePage.dart';
 import 'package:demoeticaret/SideMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -28,7 +30,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Demo Eticaret'),
+
     );
   }
 }
@@ -55,11 +58,19 @@ class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   int tabCount = 0;
   TabController tblController;
-
+  Widget sayfa;
   @override
   void initState() {
     super.initState();
     tblController = TabController(vsync: this, length: 3);
+    if(tabCount==0)
+      {
+        sayfa=HomePage(tblController);
+      }
+    else if(tabCount==2)
+      {
+        sayfa=News();
+      }
   }
 
   @override
@@ -79,6 +90,18 @@ class _MyHomePageState extends State<MyHomePage>
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.blueAccent,
+        onTap: (index){
+          setState(() {
+            if(index==0)
+              {
+                sayfa=HomePage(tblController);
+              }
+            if(index==2)
+              {
+                sayfa=News();
+              }
+          });
+        },
         items: <Widget>[
           Icon(Icons.add_shopping_cart, size: 30),
           Icon(Icons.search, size: 50),
@@ -86,416 +109,23 @@ class _MyHomePageState extends State<MyHomePage>
         ],
       ),
       appBar: AppBar(
+        actions: <Widget>[
+          FlatButton.icon(
+            onPressed: (){},
+            icon:Icon(Icons.search,size: 28,),
+            label: Text("")
+          ,color: Colors.transparent,
+          textColor: Colors.white,)
+        ],
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
       drawer: SideMenu(),
-      body: Column(
-        children: <Widget>[
-          //Ana sayfa slaytı
-          Container(
-            decoration: BoxDecoration(
-              boxShadow: <BoxShadow>[
-                BoxShadow(
-                    color: Colors.black45,
-                    blurRadius: 15.0,
-                    offset: Offset(0.0, 3))
-              ],
-            ),
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: 200,
-              child: Carousel(
-                autoplay: true,
-                autoplayDuration: Duration(seconds: 5),
-                showIndicator: false,
-                borderRadius: false,
-                images: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: new AssetImage("assets/imgmedic1.jpg"),
-                            fit: BoxFit.fitWidth)),
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(top: 80),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                      ),
-                      child: Text(
-                        "İçerik Yazısı Buraya Gelecek",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.blue,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: new AssetImage("assets/imgmedic1.jpg"),
-                            fit: BoxFit.fitWidth)),
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(top: 80),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                      ),
-                      child: Text(
-                        "İçerik Yazısı Buraya Gelecek",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.blue,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 300,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: new AssetImage("assets/imgmedic1.jpg"),
-                            fit: BoxFit.fitWidth)),
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(top: 80),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                      ),
-                      child: Text(
-                        "İçerik Yazısı Buraya Gelecek",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.blue,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          //3 Tab Ürün Grupları
-
-          Container(
-            margin: EdgeInsets.only(top: 20),
-            width: MediaQuery.of(context).size.width,
-            child: TabBar(
-              //isScrollable: true,
-              controller: tblController,
-              onTap: (index) {
-                var content = "";
-                switch (index) {
-                  case 0:
-                    break;
-                  case 1:
-                    break;
-                  case 2:
-                    break;
-                  default:
-                    break;
-                }
-              },
-              tabs: <Widget>[
-                Tab(
-                  child: Container(
-                    alignment: Alignment.center,
-                    constraints: BoxConstraints.expand(
-                        width: MediaQuery.of(context).size.width / 3),
-                    padding: EdgeInsets.only(bottom: 1),
-                    child: Container(
-                      child: Column(
-                        children: <Widget>[
-                          Icon(
-                            Icons.flash_on,
-                            color: Colors.black87,
-                          ),
-                          Text(
-                            "Son Eklenenler",
-                            style: TextStyle(color: Colors.black87),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Tab(
-                  child: Container(
-                    alignment: Alignment.center,
-                    constraints: BoxConstraints.expand(
-                        width: MediaQuery.of(context).size.width / 3),
-                    child: Column(
-                      children: <Widget>[
-                        Icon(
-                          Icons.local_offer,
-                          color: Colors.black87,
-                        ),
-                        Text(
-                          "İndirimdekiler",
-                          style: TextStyle(color: Colors.black87),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Tab(
-                  child: Container(
-                    alignment: Alignment.center,
-                    constraints: BoxConstraints.expand(
-                        width: MediaQuery.of(context).size.width / 3),
-                    child: Column(
-                      children: <Widget>[
-                        Icon(
-                          Icons.favorite,
-                          color: Colors.black87,
-                        ),
-                        Text(
-                          "Çok Satılanlar",
-                          style: TextStyle(color: Colors.black87),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            width:500,
-            height: 100,
-            child: ListView(
-           scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                Container(
-
-                  decoration: BoxDecoration(
-
-                    image: DecorationImage(
-                        image: AssetImage("assets/imgmedic3.jpg"),
-                        fit: BoxFit.fitWidth
-                    ),
-
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          color: Colors.black45,
-                          blurRadius: 10.0,
-                          offset: Offset(0.6, 0.8))
-                    ],
-                  ),
-                  margin: EdgeInsets.only(left: 5,right: 5,top: 10),
-                  width:150,
-                  height:100,
-                  child: Column(
-                    children: <Widget>[
-
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        alignment:Alignment(-1,-1),
-                        child: Icon(Icons.star,color: Colors.yellow[700],),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 30,
-                        padding: EdgeInsets.only(left: 3,right: 5),
-                        decoration: BoxDecoration(
-                            color:Colors.lightBlue[700].withOpacity(0.5)
+      body:sayfa,
 
 
-                        ),
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              child: Text("Ürün Adı",style:TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
-                            ),
-                            Spacer(),
-                            Container(
-                              child: Text("150 TL",style:TextStyle(color: Colors.white)),
-                            ),
-
-                          ],
-                        ),
-
-                      ),
-                    ],
-                  ),),
-                Container(
-
-                  decoration: BoxDecoration(
-
-                    image: DecorationImage(
-                        image: AssetImage("assets/imgmedic3.jpg"),
-                        fit: BoxFit.fitWidth
-                    ),
-
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          color: Colors.black45,
-                          blurRadius: 10.0,
-                          offset: Offset(0.6, 0.8))
-                    ],
-                  ),
-                  margin: EdgeInsets.only(left: 5,right: 5,top: 10),
-                  width:150,
-                  height:100,
-                  child: Column(
-                    children: <Widget>[
-
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        alignment:Alignment(-1,-1),
-                        child: Icon(Icons.star,color: Colors.yellow[700],),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 30,
-                        padding: EdgeInsets.only(left: 3,right: 5),
-                        decoration: BoxDecoration(
-                            color:Colors.lightBlue[700].withOpacity(0.5)
-
-
-                        ),
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              child: Text("Ürün Adı",style:TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
-                            ),
-                            Spacer(),
-                            Container(
-                              child: Text("150 TL",style:TextStyle(color: Colors.white)),
-                            ),
-
-                          ],
-                        ),
-
-                      ),
-                    ],
-                  ),),
-                Container(
-
-                  decoration: BoxDecoration(
-
-                    image: DecorationImage(
-                        image: AssetImage("assets/imgmedic3.jpg"),
-                        fit: BoxFit.fitWidth
-                    ),
-
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          color: Colors.black45,
-                          blurRadius: 10.0,
-                          offset: Offset(0.6, 0.8))
-                    ],
-                  ),
-                  margin: EdgeInsets.only(left: 5,right: 5,top: 10),
-                  width:150,
-                  height:100,
-                  child: Column(
-                    children: <Widget>[
-
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        alignment:Alignment(-1,-1),
-                        child: Icon(Icons.star,color: Colors.yellow[700],),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 30,
-                        padding: EdgeInsets.only(left: 3,right: 5),
-                        decoration: BoxDecoration(
-                            color:Colors.lightBlue[700].withOpacity(0.5)
-
-
-                        ),
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              child: Text("Ürün Adı",style:TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
-                            ),
-                            Spacer(),
-                            Container(
-                              child: Text("150 TL",style:TextStyle(color: Colors.white)),
-                            ),
-
-                          ],
-                        ),
-
-                      ),
-                    ],
-                  ),),
-                Container(
-
-                  decoration: BoxDecoration(
-
-                    image: DecorationImage(
-                        image: AssetImage("assets/imgmedic3.jpg"),
-                        fit: BoxFit.fitWidth
-                    ),
-
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          color: Colors.black45,
-                          blurRadius: 10.0,
-                          offset: Offset(0.6, 0.8))
-                    ],
-                  ),
-                  margin: EdgeInsets.only(left: 5,right: 5,top: 10),
-                  width:150,
-                  height:100,
-                  child: Column(
-                    children: <Widget>[
-
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        alignment:Alignment(-1,-1),
-                        child: Icon(Icons.star,color: Colors.yellow[700],),
-                      ),
-                      Spacer(),
-                      Container(
-                        height: 30,
-                        padding: EdgeInsets.only(left: 3,right: 5),
-                        decoration: BoxDecoration(
-                            color:Colors.lightBlue[700].withOpacity(0.5)
-
-
-                        ),
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              child: Text("Ürün Adı",style:TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
-                            ),
-                            Spacer(),
-                            Container(
-                              child: Text("150 TL",style:TextStyle(color: Colors.white)),
-                            ),
-
-                          ],
-                        ),
-
-                      ),
-                    ],
-                  ),),
-              ],
-
-            ),
-          ),
-        ],
-      ),
-
-      // This trailing comma makes auto-formatting nicer for build methods.
+      // This comma makes auto-formatting nicer for build methods.
     );
   }
 }
