@@ -1,4 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:demoeticaret/ProductDetail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -31,30 +33,36 @@ Widget build(BuildContext context){
             showIndicator: false,
             borderRadius: false,
             images: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 300,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: new AssetImage("assets/imgmedic1.jpg"),
-                        fit: BoxFit.fitWidth)),
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(top: 80),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetail()));
+                },
+                child:Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 300,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  child: Text(
-                    "İçerik Yazısı Buraya Gelecek",
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.blue,
+                      image: DecorationImage(
+                          image: new AssetImage("assets/imgmedic1.jpg"),
+                          fit: BoxFit.fitWidth)),
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.only(top: 80),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
                     ),
-                    maxLines: 1,
+                    child: Text(
+                      "İçerik Yazısı Buraya Gelecek",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.blue,
+                      ),
+                      maxLines: 1,
+                    ),
                   ),
                 ),
               ),
+
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 300,
@@ -141,10 +149,13 @@ Widget build(BuildContext context){
                           Icons.flash_on,
                           color: Colors.black87,
                         ),
-                        Text(
-                          "Son Eklenenler",
+
+                        AutoSizeText(
+                          'Son Eklenenler',
                           style: TextStyle(color: Colors.black87),
-                        ),
+                          maxLines: 1,
+                          minFontSize: 10,
+                        )
                       ],
                     ),
                   ),
@@ -161,10 +172,13 @@ Widget build(BuildContext context){
                         Icons.local_offer,
                         color: Colors.black87,
                       ),
-                      Text(
-                        "İndirimdekiler",
+
+                      AutoSizeText(
+                        'İndirimdekiler',
                         style: TextStyle(color: Colors.black87),
-                      ),
+                        maxLines: 1,
+                        minFontSize: 10,
+                      )
                     ],
                   ),
                 ),
@@ -180,10 +194,12 @@ Widget build(BuildContext context){
                         Icons.favorite,
                         color: Colors.black87,
                       ),
-                      Text(
-                        "Çok Satılanlar",
+                      AutoSizeText(
+                        'Çok Satılanlar',
                         style: TextStyle(color: Colors.black87),
-                      ),
+                        maxLines: 1,
+                        minFontSize: 10,
+                      )
                     ],
                   ),
                 ),

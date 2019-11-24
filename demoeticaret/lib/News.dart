@@ -1,4 +1,5 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:demoeticaret/NewsDetail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/scheduler/ticker.dart';
@@ -77,7 +78,13 @@ class News extends StatelessWidget {
               showIndicator: false,
               borderRadius: false,
               images: [
-                Container(
+                InkWell(
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NewsDetail()),
+                    );                  },
+                  child:Container(
                   width: MediaQuery.of(context).size.width,
                   height: 300,
                   decoration: BoxDecoration(
@@ -101,7 +108,8 @@ class News extends StatelessWidget {
                       maxLines: 1,
                     ),
                   ),
-                ),
+                ),),
+
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 300,
@@ -163,7 +171,7 @@ class News extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                      "https://www.iamexpat.nl/sites/default/files/styles/article--full/public/doctor-gp-netherlands.jpg?itok=spP6o5Q8"),
+                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
@@ -192,7 +200,7 @@ class News extends StatelessWidget {
 
                               
 
-                        child:Icon(Icons.share,color: Colors.red[700],size: 24,),
+                        child:Icon(Icons.share,color: Colors.lightGreenAccent[400],size: 24,),
 
                       ),
                     ],
@@ -228,7 +236,7 @@ class News extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                      "https://www.iamexpat.nl/sites/default/files/styles/article--full/public/doctor-gp-netherlands.jpg?itok=spP6o5Q8"),
+                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
@@ -257,7 +265,7 @@ class News extends StatelessWidget {
 
 
 
-                        child:Icon(Icons.share,color: Colors.red[700],size: 24,),
+                        child:Icon(Icons.share,color: Colors.lightGreenAccent[400],size: 24,),
 
                       ),
                     ],
@@ -294,7 +302,7 @@ class News extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                      "https://www.iamexpat.nl/sites/default/files/styles/article--full/public/doctor-gp-netherlands.jpg?itok=spP6o5Q8"),
+                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
@@ -323,7 +331,7 @@ class News extends StatelessWidget {
 
 
 
-                        child:Icon(Icons.share,color: Colors.red[700],size: 24,),
+                        child:Icon(Icons.share,color: Colors.lightGreenAccent[400],size: 24,),
 
                       ),
                     ],
@@ -360,7 +368,7 @@ class News extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                      "https://www.iamexpat.nl/sites/default/files/styles/article--full/public/doctor-gp-netherlands.jpg?itok=spP6o5Q8"),
+                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
@@ -389,7 +397,7 @@ class News extends StatelessWidget {
 
 
 
-                        child:Icon(Icons.share,color: Colors.red[700],size: 24,),
+                        child:Icon(Icons.share,color: Colors.lightGreenAccent[400],size: 24,),
 
                       ),
                     ],
@@ -426,7 +434,7 @@ class News extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                      "https://www.iamexpat.nl/sites/default/files/styles/article--full/public/doctor-gp-netherlands.jpg?itok=spP6o5Q8"),
+                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
@@ -455,7 +463,7 @@ class News extends StatelessWidget {
 
 
 
-                        child:Icon(Icons.share,color: Colors.red[700],size: 24,),
+                        child:Icon(Icons.share,color: Colors.lightGreenAccent[400],size: 24,),
 
                       ),
                     ],

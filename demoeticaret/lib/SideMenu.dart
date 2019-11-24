@@ -1,6 +1,7 @@
+import 'package:demoeticaret/UserLogin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'UserRegister.dart';
 class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context){
@@ -11,19 +12,18 @@ class SideMenu extends StatelessWidget {
             accountName: new Text("Ertekin Özturgut"),
             accountEmail: new Text("ertekinozturgut@gmail.com"),
             decoration: new BoxDecoration(
-              color:Color.fromRGBO(0, 0, 0, 1),
-              backgroundBlendMode: BlendMode.color,
-
+              color:Colors.black38.withOpacity(0.9),
+              //backgroundBlendMode: BlendMode.color,
               image: new DecorationImage(
                 image: new NetworkImage('https://images.clipartlogo.com/files/istock/previews/8673/86737997-vector-background-health-care-concept-medical-innovation-design.jpg'),
-                colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.8), BlendMode.dstATop),
+                colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.darken),
 
                 fit: BoxFit.cover,
               ),
             ),
             currentAccountPicture: CircleAvatar(
                 backgroundImage: NetworkImage(
-                    "https://randomuser.me/api/portraits/men/46.jpg")),
+                    "https://instagram.fsaw1-5.fna.fbcdn.net/vp/6d8f11d4afe8704f020277f6f321c699/5E697FE2/t51.2885-19/s150x150/65439346_2720174991334936_3864461008567271424_n.jpg?_nc_ht=instagram.fsaw1-5.fna.fbcdn.net")),
           ),
           new ListTile(
               leading: Icon(Icons.home),
@@ -75,7 +75,7 @@ class SideMenu extends StatelessWidget {
               leading: Icon(Icons.lock_open),
               title: new Text("Giriş Yap"),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>UserLogin()));
               }),
           Container(
             margin: EdgeInsets.all(10),
@@ -83,7 +83,9 @@ class SideMenu extends StatelessWidget {
             child:RaisedButton(
               color: Colors.red[800],
               textColor: Colors.white,
-              onPressed: (){},
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>UserRegister()));
+              },
 
               child: Container(
                 child: Text("Üye Ol!"),
