@@ -13,22 +13,36 @@ class NewsDetail extends StatelessWidget {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              expandedHeight: 200.0,
+
+              expandedHeight: 250.0,
               floating: false,
               pinned: true,
-              flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: true,
-                  title: Text("Haber Başlığı",
+              flexibleSpace: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.blue,
+                      Colors.green  
+                    ],
+                  )
+                ),
+                child: FlexibleSpaceBar(
+                    centerTitle: true,
+
+                    title: Text("Haber Başlığı",
                       style: TextStyle(
                         color: Colors.white,
+
                         fontSize: 20.0,
-                      )),
-                  background: Image.network(
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRT_j3qj4XAxg7pmhWSm-uIKIUZa9wyJSOJC8YlLIEuhkwCR-b&s",
-                    fit: BoxFit.cover,
-                    color: Colors.black45.withOpacity(0.4),
-                    colorBlendMode: BlendMode.darken,
-                  )),
+                      ),textAlign: TextAlign.left,
+                    ),
+                    background: Image.network(
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRT_j3qj4XAxg7pmhWSm-uIKIUZa9wyJSOJC8YlLIEuhkwCR-b&s",
+                      fit: BoxFit.cover,
+                      color: Colors.black45.withOpacity(0.4),
+                      colorBlendMode: BlendMode.darken,
+                    )),
+              ),
             ),
           ];
         },
