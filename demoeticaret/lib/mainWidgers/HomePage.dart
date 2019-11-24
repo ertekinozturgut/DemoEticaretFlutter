@@ -26,7 +26,7 @@ Widget build(BuildContext context){
         ),
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: 200,
+          height: 215,
           child: Carousel(
             autoplay: true,
             autoplayDuration: Duration(seconds: 5),

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'UserPasswordForget.dart';
+
 class UserLogin extends StatelessWidget{
 
 
@@ -30,6 +32,19 @@ class UserLogin extends StatelessWidget{
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Spacer(),
+
+                  InkWell(
+                    child:Container(
+
+                      alignment: Alignment.topLeft,
+                      padding: EdgeInsets.only(left: 25,top: 10),
+                      child: Icon(Icons.arrow_back_ios,size: 30,color: Colors.white,),
+                    ),
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                  ),
                   Spacer(),
                   Align(
                     alignment: Alignment.center,
@@ -130,12 +145,17 @@ class UserLogin extends StatelessWidget{
                       padding: const EdgeInsets.only(
                           top: 16, right: 32
                       ),
-                      child: Text('Şifremi Unuttum ?',
-                        style: TextStyle(
-                            color: Colors.black45,
-                          fontSize: 16
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>UserPasswordForget()));
+                        },
+                        child:Text('Şifremi Unuttum ?',
+                          style: TextStyle(
+                              color: Colors.black45,
+                              fontSize: 16
+                          ),
                         ),
-                      ),
+                      )
                     ),
                   ),
                   Spacer(),

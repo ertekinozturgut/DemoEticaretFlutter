@@ -23,6 +23,7 @@ class UserRegisterState extends State<UserRegister>{
         child:Column(
           //scrollDirection: Axis.vertical,
           children: <Widget>[
+
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height/3,
@@ -42,6 +43,18 @@ class UserRegisterState extends State<UserRegister>{
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Spacer(),
+                  InkWell(
+                    child:Container(
+
+                      alignment: Alignment.topLeft,
+                      padding: EdgeInsets.only(left: 25,top: 10),
+                      child: Icon(Icons.arrow_back_ios,size: 30,color: Colors.white,),
+                    ),
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                  ),
                   Spacer(),
                   Align(
                     alignment: Alignment.center,

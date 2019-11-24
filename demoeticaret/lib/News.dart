@@ -170,8 +170,8 @@ class News extends StatelessWidget {
               margin: EdgeInsets.only(top: 10, left: 5, right: 5),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
+                  image: AssetImage(
+                      "assets/dc.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
@@ -235,8 +235,8 @@ class News extends StatelessWidget {
               margin: EdgeInsets.only(top: 10, left: 5, right: 5),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
+                  image: AssetImage(
+                      "assets/dc.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
@@ -301,8 +301,8 @@ class News extends StatelessWidget {
               margin: EdgeInsets.only(top: 10, left: 5, right: 5),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
+                  image: AssetImage(
+                      "assets/dc.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
@@ -367,8 +367,8 @@ class News extends StatelessWidget {
               margin: EdgeInsets.only(top: 10, left: 5, right: 5),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
+                  image: AssetImage(
+                      "assets/dc.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
@@ -433,8 +433,8 @@ class News extends StatelessWidget {
               margin: EdgeInsets.only(top: 10, left: 5, right: 5),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://cdn.iha.com.tr/Contents/images/2018/15/2424863.jpg"),
+                  image: AssetImage(
+                      "assets/dc.jpg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black45.withOpacity(0.5), BlendMode.darken),
