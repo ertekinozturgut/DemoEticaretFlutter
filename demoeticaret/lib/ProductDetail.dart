@@ -194,8 +194,8 @@ class ProductDetail extends StatelessWidget {
                                      boxShadow: <BoxShadow>[
                                        BoxShadow(
                                            color: Colors.black45,
-                                           blurRadius: 10.0,
-                                           offset: Offset(0.6, 0.8))
+                                           blurRadius: 6.0,
+                                           offset: Offset(0.4, 0.5))
                                      ],
                                    ),
                                    margin:
@@ -223,8 +223,8 @@ class ProductDetail extends StatelessWidget {
                                      boxShadow: <BoxShadow>[
                                        BoxShadow(
                                            color: Colors.black45,
-                                           blurRadius: 10.0,
-                                           offset: Offset(0.6, 0.8))
+                                           blurRadius: 6.0,
+                                           offset: Offset(0.4, 0.5))
                                      ],
                                    ),
                                    margin:
@@ -252,8 +252,8 @@ class ProductDetail extends StatelessWidget {
                                      boxShadow: <BoxShadow>[
                                        BoxShadow(
                                            color: Colors.black45,
-                                           blurRadius: 10.0,
-                                           offset: Offset(0.6, 0.8))
+                                           blurRadius: 6.0,
+                                           offset: Offset(0.4, 0.5))
                                      ],
                                    ),
                                    margin:
@@ -281,8 +281,8 @@ class ProductDetail extends StatelessWidget {
                                      boxShadow: <BoxShadow>[
                                        BoxShadow(
                                            color: Colors.black45,
-                                           blurRadius: 10.0,
-                                           offset: Offset(0.6, 0.8))
+                                           blurRadius: 6.0,
+                                           offset: Offset(0.4, 0.5))
                                      ],
                                    ),
                                    margin:
@@ -310,8 +310,8 @@ class ProductDetail extends StatelessWidget {
                                      boxShadow: <BoxShadow>[
                                        BoxShadow(
                                            color: Colors.black45,
-                                           blurRadius: 10.0,
-                                           offset: Offset(0.6, 0.8))
+                                           blurRadius: 6.0,
+                                           offset: Offset(0.4, 0.5))
                                      ],
                                    ),
                                    margin:
@@ -340,12 +340,12 @@ class ProductDetail extends StatelessWidget {
                          Container(
 
                            width: MediaQuery.of(context).size.width,
-                           height: 300,
                            child: Container(
                              child: Container(
                                margin: EdgeInsets.only(left: 20, right: 20, top: 15, bottom: 10),
-                               padding:
-                               EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
+                               padding: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
+                               height: 250,
+
                                decoration: BoxDecoration(
                                  color: Colors.white,
                                  shape: BoxShape.rectangle,
@@ -366,7 +366,6 @@ class ProductDetail extends StatelessWidget {
                                  children: <Widget>[
                                    Container(
                                      alignment: Alignment.center,
-
                                      child: AutoSizeText(
                                        "A product detail page (PDP) is a web page on an eCommerce site that presents a description about a "
                                            "specific product in view. The details displayed often include size, color, price, "
@@ -375,7 +374,7 @@ class ProductDetail extends StatelessWidget {
                                            "A product detail page (PDP) is a web page on an eCommerce site"
                                            " that presents a description about a specific product in view. "
                                            "The details displayed often include size, color, price, shipping.",
-                                       minFontSize: 16.0,
+                                       minFontSize: 18.0,
                                        maxFontSize: 22.0,
                                      ),
                                    ),

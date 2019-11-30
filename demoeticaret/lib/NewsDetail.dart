@@ -22,7 +22,7 @@ class NewsDetail extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: [
                       Colors.blue,
-                      Colors.green  
+                      Colors.green
                     ],
                   )
                 ),
