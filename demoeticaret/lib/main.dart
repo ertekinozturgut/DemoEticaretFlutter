@@ -97,6 +97,11 @@ class _MyHomePageState extends State<MyHomePage>
               {
                 sayfa=News();
               }
+              if(index==1){
+                showSearch(
+                    context: context,delegate: DataSearch()
+                );
+              }
             });
           },
           items: <Widget>[

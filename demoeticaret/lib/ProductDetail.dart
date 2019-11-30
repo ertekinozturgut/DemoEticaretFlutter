@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:demoeticaret/MyBasket.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -61,7 +62,11 @@ class ProductDetail extends StatelessWidget {
                 //appbar
                 GradientAppBar(
                   actions: <Widget>[
-                    FlatButton.icon(onPressed: (){}
+                    FlatButton.icon(
+                        onPressed: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyBasket()));
+                        }
+
                     , icon: Icon(Icons.shopping_basket,color: Colors.white,), label: Text(""))
                   ],
                   title: Text('Ürün Detayı'),

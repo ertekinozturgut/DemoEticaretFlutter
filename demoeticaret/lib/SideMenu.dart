@@ -1,4 +1,7 @@
+import 'package:demoeticaret/MyBasket.dart';
 import 'package:demoeticaret/UserLogin.dart';
+import 'package:demoeticaret/main.dart';
+import 'package:demoeticaret/mainWidgers/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'UserRegister.dart';
@@ -37,7 +40,7 @@ class SideMenu extends StatelessWidget {
               trailing: Icon(Icons.arrow_right),
 
               onTap: () {
-                Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyApp()));
               }),
           new ListTile(
               leading: Icon(Icons.library_books),
@@ -45,7 +48,7 @@ class SideMenu extends StatelessWidget {
               trailing: Icon(Icons.arrow_right),
 
               onTap: () {
-                Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyHomePage()));
               }),
           new ListTile(
               leading: Icon(Icons.shopping_basket),
@@ -53,7 +56,7 @@ class SideMenu extends StatelessWidget {
               trailing: Icon(Icons.arrow_right),
 
               onTap: () {
-                Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyBasket()));
               }),
           new ListTile(
               leading: Icon(Icons.local_offer),
