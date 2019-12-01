@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:demoeticaret/ProductDetail.dart';
 import 'package:demoeticaret/mainWidgers/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -49,20 +50,40 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                          isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                                label: AutoSizeText(
+                                    "Ürüne git",style: TextStyle(color: Colors.white),
+                                    maxLines: 1,
+                                  minFontSize: 6,
+                                  maxFontSize: 14,
+                                ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
@@ -94,9 +115,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -143,8 +169,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(
@@ -180,25 +209,44 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                            isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                              label: AutoSizeText(
+                                "Ürüne git",style: TextStyle(color: Colors.white),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                maxFontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                            },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();
-                    },
+                      ).show();                    },
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -226,9 +274,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -275,8 +328,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(
@@ -312,25 +368,44 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                            isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                              label: AutoSizeText(
+                                "Ürüne git",style: TextStyle(color: Colors.white),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                maxFontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                            },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();
-                    },
+                      ).show();                         },
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -358,9 +433,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -407,8 +487,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(
@@ -444,25 +527,44 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                            isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                              label: AutoSizeText(
+                                "Ürüne git",style: TextStyle(color: Colors.white),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                maxFontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                            },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();
-                    },
+                      ).show();                         },
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -489,9 +591,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -538,8 +645,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(
@@ -575,25 +685,44 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                            isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                              label: AutoSizeText(
+                                "Ürüne git",style: TextStyle(color: Colors.white),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                maxFontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                            },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();
-                    },
+                      ).show();                         },
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -620,9 +749,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -669,8 +803,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(
@@ -706,25 +843,44 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                            isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                              label: AutoSizeText(
+                                "Ürüne git",style: TextStyle(color: Colors.white),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                maxFontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                            },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();
-                    },
+                      ).show();                         },
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -751,9 +907,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -800,8 +961,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(
@@ -837,25 +1001,44 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                            isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                              label: AutoSizeText(
+                                "Ürüne git",style: TextStyle(color: Colors.white),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                maxFontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                            },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();
-                    },
+                      ).show();                         },
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -883,9 +1066,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -932,8 +1120,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(
@@ -969,25 +1160,44 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                            isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                              label: AutoSizeText(
+                                "Ürüne git",style: TextStyle(color: Colors.white),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                maxFontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                            },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();
-                    },
+                      ).show();                         },
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -1015,9 +1225,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -1064,8 +1279,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(
@@ -1101,25 +1319,44 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                            isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                              label: AutoSizeText(
+                                "Ürüne git",style: TextStyle(color: Colors.white),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                maxFontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                            },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();
-                    },
+                      ).show();                         },
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -1146,9 +1383,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -1195,8 +1437,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(
@@ -1232,25 +1477,44 @@ class MyBasketState extends State<MyBasket> {
                   child: ListTile(
                     onTap: (){
                       Alert(
+
                         context: context,
-                        type: AlertType.warning,
+                        type: AlertType.info,
+                        style: AlertStyle(
+                            isCloseButton: false
+                        ),
+
                         title: "Ürün Adı",
                         desc: "Kısa ürün detayı...",
                         buttons: [
                           DialogButton(
-                            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.redo,color: Colors.white,), label: Text("Ürüne git",style: TextStyle(color: Colors.white),)),
-                            onPressed: () => Navigator.pop(context),
+                            child: FlatButton.icon(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                              Navigator.of(context, rootNavigator: true).pop();
+
+                            }, icon: Icon(Icons.redo,color: Colors.white,size: 12,),
+                              label: AutoSizeText(
+                                "Ürüne git",style: TextStyle(color: Colors.white),
+                                maxLines: 1,
+                                minFontSize: 6,
+                                maxFontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetail()));
+                            },
                             color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                           DialogButton(
                             color: Colors.red[700],
                             child:Text("Kapat",style: TextStyle(color: Colors.white),),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.of(context, rootNavigator: true).pop();
+                            },
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();
-                    },
+                      ).show();                         },
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -1277,9 +1541,14 @@ class MyBasketState extends State<MyBasket> {
 
                       child: FlatButton.icon(onPressed: (){
                         Alert(
+                          style: AlertStyle(
+                            isCloseButton: false,
+                          ),
+
                           content: Container(
                             margin: EdgeInsets.all(10),
                             alignment: Alignment.center,
+
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -1326,8 +1595,11 @@ class MyBasketState extends State<MyBasket> {
                           buttons:<DialogButton>[
                             DialogButton(
                               color: Colors.blue,
-                              onPressed: (){},
-                              child: Text("Tamamla",style: TextStyle(color: Colors.white,),),
+                              onPressed: (){
+                                Navigator.of(context, rootNavigator: true).pop();
+
+                              },
+                              child: Text("İşlemi Bitir",style: TextStyle(color: Colors.white,),),
 
                             ),
                             DialogButton(

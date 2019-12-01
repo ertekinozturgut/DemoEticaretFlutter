@@ -75,9 +75,9 @@ class ProductDetail extends StatelessWidget {
                   centerTitle: true,
                 ),
                Positioned(
-                 top: 180,
+                 top: 160,
                  left: 0,
-                 height:700,
+                 height:MediaQuery.of(context).size.height/4*3,
                  width: MediaQuery.of(context).size.width,
                  child: Container(
                    width: MediaQuery.of(context).size.width,
@@ -439,10 +439,7 @@ class ProductDetail extends StatelessWidget {
                                        ),
                                      ),
 
-                                     Container(
-                                       margin: EdgeInsets.only(left: MediaQuery.of(context).size.width/6.5),
 
-                                     ),
                                      Container(
                                        margin: EdgeInsets.only(right: 10),
                                        padding: EdgeInsets.all(10),
