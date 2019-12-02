@@ -416,6 +416,17 @@ Widget build(BuildContext context){
           ],
         ),
       ),
+      Container(
+        margin: EdgeInsets.only(top: 20,bottom: 10),
+        padding: EdgeInsets.only(left: 5),
+
+        child: Text("Ürün Grupları",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
+      ),
+      Container(
+        margin: EdgeInsets.only(right: MediaQuery.of(context).size.width/2+5,left: 5),
+        child:Divider(height: 0.5,thickness: 2.5,color: Colors.blue,),
+
+      ),
       //4 lü ürün grupları
       //Container(
       Row(
