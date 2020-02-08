@@ -83,14 +83,15 @@ class News extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => NewsDetail()),
-                    );                  },
+                    );
+                    },
                   child:Container(
                   width: MediaQuery.of(context).size.width,
                   height: 300,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: new NetworkImage(
-                              "https://dlior9lx1k7r2.cloudfront.net/companylogo/d3ba7c29-7a7e-4b66-891e-1cce04c4a680.jpg"),
+                          image: new AssetImage(
+                              "assets/health.jpg"),
                           fit: BoxFit.fitWidth)),
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -109,30 +110,37 @@ class News extends StatelessWidget {
                     ),
                   ),
                 ),),
-
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 300,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: new AssetImage("assets/imgmedic1.jpg"),
-                          fit: BoxFit.fitWidth)),
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    margin: EdgeInsets.only(top: 80),
+                InkWell(
+                  child:Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 300,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Text(
-                      "İçerik Yazısı Buraya Gelecek",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.blue,
+                        image: DecorationImage(
+                            image: new AssetImage("assets/imgmedic1.jpg"),
+                            fit: BoxFit.fitWidth)),
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.only(top: 80),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
                       ),
-                      maxLines: 1,
+                      child: Text(
+                        "İçerik Yazısı Buraya Gelecek",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.blue,
+                        ),
+                        maxLines: 1,
+                      ),
                     ),
                   ),
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NewsDetail()),
+                    );
+                  },
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,

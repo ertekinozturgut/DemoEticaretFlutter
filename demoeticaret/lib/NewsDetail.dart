@@ -36,8 +36,8 @@ class NewsDetail extends StatelessWidget {
                         fontSize: 20.0,
                       ),textAlign: TextAlign.left,
                     ),
-                    background: Image.network(
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRT_j3qj4XAxg7pmhWSm-uIKIUZa9wyJSOJC8YlLIEuhkwCR-b&s",
+                    background: Image.asset(
+                      "assets/detailnews.jpg",
                       fit: BoxFit.cover,
                       color: Colors.black45.withOpacity(0.4),
                       colorBlendMode: BlendMode.darken,

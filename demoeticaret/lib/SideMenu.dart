@@ -19,7 +19,7 @@ class SideMenu extends StatelessWidget {
               color:Colors.black38.withOpacity(0.9),
               //backgroundBlendMode: BlendMode.color,
               image: new DecorationImage(
-                image: new NetworkImage('https://images.clipartlogo.com/files/istock/previews/8673/86737997-vector-background-health-care-concept-medical-innovation-design.jpg'),
+                image: new AssetImage('assets/profilbg.jpg'),
                 colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.darken),
 
                 fit: BoxFit.cover,

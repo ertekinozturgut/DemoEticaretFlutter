@@ -48,7 +48,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                   /* onTap: (){
                       Alert(
 
                         context: context,
@@ -88,7 +88,7 @@ class MyBasketState extends State<MyBasket> {
                           ),
                         ],
                       ).show();
-                    },
+                    },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -207,7 +207,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                   /* onTap: (){
                       Alert(
 
                         context: context,
@@ -246,7 +246,7 @@ class MyBasketState extends State<MyBasket> {
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();                    },
+                      ).show();                    },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -366,7 +366,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                 /*   onTap: (){
                       Alert(
 
                         context: context,
@@ -405,7 +405,7 @@ class MyBasketState extends State<MyBasket> {
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();                         },
+                      ).show();                         },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -525,7 +525,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                    /*onTap: (){
                       Alert(
 
                         context: context,
@@ -564,7 +564,7 @@ class MyBasketState extends State<MyBasket> {
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();                         },
+                      ).show();                         },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -683,7 +683,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                 /*   onTap: (){
                       Alert(
 
                         context: context,
@@ -722,7 +722,7 @@ class MyBasketState extends State<MyBasket> {
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();                         },
+                      ).show();                         },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -841,7 +841,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                   /* onTap: (){
                       Alert(
 
                         context: context,
@@ -880,7 +880,7 @@ class MyBasketState extends State<MyBasket> {
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();                         },
+                      ).show();                         },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -999,7 +999,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                    /*onTap: (){
                       Alert(
 
                         context: context,
@@ -1038,7 +1038,7 @@ class MyBasketState extends State<MyBasket> {
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();                         },
+                      ).show();                         },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -1158,7 +1158,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                    /*onTap: (){
                       Alert(
 
                         context: context,
@@ -1197,7 +1197,7 @@ class MyBasketState extends State<MyBasket> {
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();                         },
+                      ).show();                         },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -1317,7 +1317,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                    /*onTap: (){
                       Alert(
 
                         context: context,
@@ -1356,7 +1356,7 @@ class MyBasketState extends State<MyBasket> {
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();                         },
+                      ).show();                         },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
@@ -1475,7 +1475,7 @@ class MyBasketState extends State<MyBasket> {
                   ),
 
                   child: ListTile(
-                    onTap: (){
+                  /*  onTap: (){
                       Alert(
 
                         context: context,
@@ -1514,7 +1514,7 @@ class MyBasketState extends State<MyBasket> {
                             //color: Color.fromRGBO(0, 179, 134, 1.0),
                           ),
                         ],
-                      ).show();                         },
+                      ).show();                         },*/
                     contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     leading: Container(
 
